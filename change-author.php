@@ -48,6 +48,7 @@ function ca_save_author_meta($post_id) {
 
 /* Display Author Alias */
 add_filter('the_author', 'ca_author_filter' );
+add_filter( 'get_the_author_display_name', 'ca_author_filter' );
 function ca_author_filter($name) {
 	global $post;
 	$author = get_post_meta($post->ID, 'ca_author_alias', true);
